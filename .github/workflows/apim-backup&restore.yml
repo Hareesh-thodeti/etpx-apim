@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: creating resource group
-        run: az group create --name "etpxapimdata" --location "eastus2"
+        run: New-AzResourceGroup -Name "etpxapimdata" -Location "eastus2"
 
       - name: Run a multi-line script
         run: |
