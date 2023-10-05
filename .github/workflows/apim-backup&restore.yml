@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Login into azure account
         run: |
-         cd home/ubuntu
+         cd /home/ubuntu
          pwsh
          $tenantId = "9d68da93-1f22-4f6c-9e91-aa61811bc7b0"
          $appId = "e9fa51dc-d852-4247-8f77-e5b923743cff"
