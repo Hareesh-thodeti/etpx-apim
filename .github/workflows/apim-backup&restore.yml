@@ -11,8 +11,9 @@ jobs:
     steps: 
       - uses: actions/checkout@v3
 
-      - name: creating resource group
-        run: New-AzResourceGroup -Name "etpxapimdata" -Location "eastus2"
+      - name: creating storage account
+        run: $storageAccount = New-AzStorageAccount -ResourceGroupName "Ubuntuvm-RG" -Name "apimstorage1" -SkuName Standard_LRS -Location "eastus"
+
 
       - name: Run a multi-line script
         run: |
