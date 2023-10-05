@@ -12,10 +12,8 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: creating storage account
-        run: apim
+        run: Backup-AzApiManagement -ResourceGroupName "etpxapim-rg"  -Name "thbs-apim-2" -StorageContext $storageAccount.Context -TargetContainerName "apim-backup-github" -TargetBlobName "apim-github-backup"
 
 
-      - name: creating storage account
-        run: $storageAccount = New-AzStorageAccount -ResourceGroupName "Ubuntuvm-RG" -Name "apimstorage1" -SkuName Standard_LRS -Location "eastus"
-          echo Add other actions to build,
-          echo test, and deploy your project.
+
+      
