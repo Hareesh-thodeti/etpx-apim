@@ -11,8 +11,8 @@ jobs:
     steps: 
       - uses: actions/checkout@v3
 
-      - name: creating storage account
-        run: Backup-AzApiManagement -ResourceGroupName "etpxapim-rg"  -Name "thbs-apim-2" -StorageContext $storageAccount.Context -TargetContainerName "apim-backup-github" -TargetBlobName "apim-github-backup"
+      - name: Apim backup
+        run: Backup-AzApiManagement -ResourceGroupName "etpxapim-rg" -Name "thbs-apim-2" -StorageContext $storageAccount.Context -TargetContainerName "apim-backup-github" -TargetBlobName "apim-github-backup"
 
 
 
