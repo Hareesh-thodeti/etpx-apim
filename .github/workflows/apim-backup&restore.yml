@@ -14,14 +14,6 @@ jobs:
       - name: Apim backup
         run: |
           pwsh
-          -- login to azure using power shell --
-               $tenantId = "9d68da93-1f22-4f6c-9e91-aa61811bc7b0"
-               $appId = "e9fa51dc-d852-4247-8f77-e5b923743cff"
-               $password = "bRq8Q~VZ9gs.J5ufsTMbqr8b4wx5wJeUQ.9Slc68"
-               $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
-               $credential = New-Object -TypeName PSCredential -ArgumentList $appId, $securePassword
-               
-          Connect-AzAccount -ServicePrincipal -Tenant $tenantId -Credential $credential
           Get-AzStorageAccount -ResourceGroupName "etpxapim-rg" -Name "restoreapiminstances"
           Backup-AzApiManagement -ResourceGroupName "etpxapim-rg" -Name "thbs-apim-2" -StorageContext $storageAccount.Context -TargetContainerName "apim-backup-github" -TargetBlobName "apim-github-backup"
 
