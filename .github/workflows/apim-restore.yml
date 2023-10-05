@@ -27,3 +27,4 @@ jobs:
       - name: Apim backup
         shell: pwsh
         run: |
+         Restore-AzApiManagement -ResourceGroupName "etpxapim-rg" -Name "thbs-apim-2" -StorageContext $storageAccount.Context -SourceContainerName "apim-backup-github" -SourceBlobName "apim-github-backup"
