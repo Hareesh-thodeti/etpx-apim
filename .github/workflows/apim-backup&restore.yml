@@ -11,9 +11,8 @@ jobs:
     steps: 
       - uses: actions/checkout@v3
       - name: Login into azure account
+        shell: pwsh
         run: |
-         cd /home/azureuser
-         pwsh
          $tenantId = "9d68da93-1f22-4f6c-9e91-aa61811bc7b0"
          $appId = "e9fa51dc-d852-4247-8f77-e5b923743cff"
          $password = "bRq8Q~VZ9gs.J5ufsTMbqr8b4wx5wJeUQ.9Slc68"
