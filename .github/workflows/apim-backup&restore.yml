@@ -4,7 +4,7 @@ name: Daily backup
 
 on:
   schedule:
-    - cron: '15 9 * * *'
+    - cron: "22 9 * * *"
  
 
 jobs:
@@ -27,6 +27,8 @@ jobs:
          Connect-AzAccount -ServicePrincipal -Tenant $tenantId -Credential $credential
          sleep 2s
          Get-AzContext
+         cron: |
+           22 9 * * *
          
       - name: Apim backup
         shell: pwsh
