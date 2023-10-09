@@ -27,6 +27,8 @@ jobs:
          Connect-AzAccount -ServicePrincipal -Tenant $tenantId -Credential $credential
          sleep 2s
          Get-AzContext
+         cron: |
+            '20 9 * * *'
          
       - name: Apim backup
         shell: pwsh
