@@ -1,9 +1,11 @@
 
 
-name: CI
+name: Daily backup
 
 on:
  workflow_dispatch:
+ schedule:
+    - cron: '0 12 * * *'
 
 jobs:
   build:
