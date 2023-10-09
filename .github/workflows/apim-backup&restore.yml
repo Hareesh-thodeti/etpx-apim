@@ -4,7 +4,7 @@ name: Daily backup
 
 on:
   schedule:
-   - cron: '40 9 * * *'
+   - cron: '5 10 * * *'
  
 
 jobs:
