@@ -18,8 +18,8 @@ jobs:
         run: |
          cd /home/azureuser
          $tenantId = ${{ secrets.AZURE_TENANT_ID }} 
-         $appId = "e9fa51dc-d852-4247-8f77-e5b923743cff"
-         $password = "bRq8Q~VZ9gs.J5ufsTMbqr8b4wx5wJeUQ.9Slc68
+         $appId = ${{ secrets.AZURE_APPLICATION_ID }}
+         $password = ${{ secrets.AZURE_PASSWD }}
          sleep 2s
          $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
          sleep 2s
