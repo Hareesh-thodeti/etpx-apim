@@ -34,5 +34,6 @@ jobs:
         run: |
           $storageAccount = Get-AzStorageAccount -ResourceGroupName "etpxapim-rg" -Name "restoreapiminstances"
           $apimBackupCommand = ${{ secrets.APIM_BACKUP }}
+          Invoke-Expression -Command $apimBackupCommand
 
       
