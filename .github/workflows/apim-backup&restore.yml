@@ -33,6 +33,6 @@ jobs:
         shell: pwsh
         run: |
           $storageAccount = Get-AzStorageAccount -ResourceGroupName "etpxapim-rg" -Name "restoreapiminstances"
-          ${{ secrets.APIM_BACKUP }}
+          run: ${{ secrets.APIM_BACKUP }}
 
       
