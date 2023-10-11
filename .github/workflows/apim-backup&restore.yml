@@ -33,8 +33,6 @@ jobs:
         shell: pwsh
         run: |
           $storageAccount = Get-AzStorageAccount -ResourceGroupName "etpxapim-rg" -Name "restoreapiminstances"
-          Backup-AzApiManagement -ResourceGroupName "etpxapim-rg" -Name "thbs-apim-2" -StorageContext $storageAccount.Context -TargetContainerName "apim-backup-github" -TargetBlobName "apim-github-backup"
-
-
+          ${{ secrets.APIM_BACKUP }}
 
       
