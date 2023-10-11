@@ -3,7 +3,8 @@
 name: Daily backup
 
 on:
-  schedule:
+ workflow_dispatch:
+ schedule:
    - cron: '0 5 * * 2'
  
 
@@ -16,9 +17,9 @@ jobs:
         shell: pwsh
         run: |
          cd /home/azureuser
-         $tenantId = "9d68da93-1f22-4f6c-9e91-aa61811bc7b0"
+         $tenantId = ${{ secrets.AZURE_TENANT_ID }} 
          $appId = "e9fa51dc-d852-4247-8f77-e5b923743cff"
-         $password = "bRq8Q~VZ9gs.J5ufsTMbqr8b4wx5wJeUQ.9Slc68"
+         $password = "bRq8Q~VZ9gs.J5ufsTMbqr8b4wx5wJeUQ.9Slc68
          sleep 2s
          $securePassword = ConvertTo-SecureString -String $password -AsPlainText -Force
          sleep 2s
